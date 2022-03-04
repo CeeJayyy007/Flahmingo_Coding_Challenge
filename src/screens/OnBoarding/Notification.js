@@ -12,7 +12,7 @@ import {TextButton, Header, IconButton} from '../../components';
 import {images, FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
-const Verify = ({navigation}) => {
+const Notification = ({navigation}) => {
   function renderHeaderSection() {
     return (
       <Header
@@ -39,12 +39,12 @@ const Verify = ({navigation}) => {
         }
         rightComponent={
           <TextButton
-            label="Next"
+            label="Skip"
             buttonContainerStyle={{
               backgroundColor: null,
             }}
             labelStyle={{color: COLORS.primary}}
-            onPress={() => navigation.navigate('Password')}
+            onPress={() => navigation.navigate('Investment')}
           />
         }
       />
@@ -66,46 +66,39 @@ const Verify = ({navigation}) => {
             marginTop: SIZES.radius,
             textAlign: 'center',
             ...FONTS.body4,
-            color: COLORS.primary,
+            color: COLORS.secondary,
             paddingBottom: SIZES.radius,
           }}>
           STEP 1/7
         </Text>
         <Text
           style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
-          Let’s start with your {'\n'} mobile number
+          Do you want to turn{'\n'}on notification?
         </Text>
-        <Text
-          style={{
-            marginTop: SIZES.radius,
-            textAlign: 'center',
-            ...FONTS.body3,
-            color: COLORS.text,
-          }}>
-          Number we can use to reach you
-        </Text>
+        {/* background image */}
         <View
           style={{
-            marginTop: 20,
-            borderColor: COLORS.lightGray3,
+            top: 20,
+            paddingBottom: SIZES.padding,
           }}>
-          <TextInput
-            placeholder="Text Input"
-            keyboardType="number-pad"
+          <Image
+            source={images.notification}
+            resizeMode="contain"
             style={{
-              color: COLORS.textLarge,
-              minHeight: 50,
-              textAlign: 'center',
-              marginTop: 10,
-              marginBottom: 10,
-              height: 60,
-              width: 283,
-              borderRadius: 16,
-              backgroundColor: COLORS.white,
-              ...FONTS.body3,
+              height: 211,
+              width: 210,
             }}
           />
         </View>
+        <Text
+          style={{
+            marginTop: SIZES.radius,
+            textAlign: 'left',
+            ...FONTS.body3,
+            color: COLORS.text,
+          }}>
+          New weekly reminder
+        </Text>
       </View>
     );
   }
@@ -117,12 +110,12 @@ const Verify = ({navigation}) => {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          top: 160,
+          top: 260,
         }}>
         <TextButton
-          label="Verify Now"
+          label="Allow"
           buttonContainerStyle={{height: 56, width: 250}}
-          onPress={() => navigation.navigate('Confirm')}
+          onPress={() => navigation.navigate('Investment')}
         />
       </View>
     );
@@ -148,4 +141,4 @@ const Verify = ({navigation}) => {
   );
 };
 
-export default Verify;
+export default Notification;

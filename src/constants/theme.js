@@ -15,6 +15,7 @@ export const COLORS = {
   success: '#28a745',
   error: '#dc3545',
   tertiary: '#80B4A0',
+  otp: '#E4DFFF',
 
   lightGreen: '#4BEE70',
   red: '#D84035',
@@ -78,7 +79,7 @@ export const FONTS = {
   body1: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body1, lineHeight: 36},
   body2: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body2, lineHeight: 30},
   body3: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body3, lineHeight: 28},
-  body4: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body4, lineHeight: 14},
+  body4: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body4, lineHeight: 22},
   body5: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body5, lineHeight: 22},
 };
 

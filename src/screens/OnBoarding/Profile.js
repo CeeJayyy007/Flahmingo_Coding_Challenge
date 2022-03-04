@@ -1,18 +1,11 @@
+import OTPInputView from '@twotalltotems/react-native-otp-input';
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  Animated,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+import {View, Text} from 'react-native';
 import {TextButton, Header, IconButton} from '../../components';
-import {images, FONTS, SIZES, COLORS, icons} from '../../constants';
+import {FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
-const Verify = ({navigation}) => {
+const Profile = ({navigation}) => {
   function renderHeaderSection() {
     return (
       <Header
@@ -39,12 +32,12 @@ const Verify = ({navigation}) => {
         }
         rightComponent={
           <TextButton
-            label="Next"
+            label="Skip"
             buttonContainerStyle={{
               backgroundColor: null,
             }}
             labelStyle={{color: COLORS.primary}}
-            onPress={() => navigation.navigate('Password')}
+            onPress={() => navigation.navigate('Interest')}
           />
         }
       />
@@ -66,15 +59,23 @@ const Verify = ({navigation}) => {
             marginTop: SIZES.radius,
             textAlign: 'center',
             ...FONTS.body4,
-            color: COLORS.primary,
+            color: COLORS.secondary,
             paddingBottom: SIZES.radius,
           }}>
           STEP 1/7
         </Text>
         <Text
           style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
-          Let’s start with your {'\n'} mobile number
+          Profile Photo
         </Text>
+        {/* Profile picture slider */}
+        <View
+          style={{
+            flex: 1,
+            marginTop: SIZES.padding * 2,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}></View>
         <Text
           style={{
             marginTop: SIZES.radius,
@@ -82,27 +83,23 @@ const Verify = ({navigation}) => {
             ...FONTS.body3,
             color: COLORS.text,
           }}>
-          Number we can use to reach you
+          You can select photo from one of{'\n'}this emoji or add your own photo
+          {'\n'} as profile picture
         </Text>
+
         <View
           style={{
-            marginTop: 20,
-            borderColor: COLORS.lightGray3,
+            marginTop: 40,
+            top: 20,
           }}>
-          <TextInput
-            placeholder="Text Input"
-            keyboardType="number-pad"
-            style={{
-              color: COLORS.textLarge,
-              minHeight: 50,
-              textAlign: 'center',
-              marginTop: 10,
-              marginBottom: 10,
-              height: 60,
-              width: 283,
-              borderRadius: 16,
-              backgroundColor: COLORS.white,
-              ...FONTS.body3,
+          <TextButton
+            label="Add Custom Photo"
+            buttonContainerStyle={{
+              backgroundColor: null,
+            }}
+            labelStyle={{
+              color: COLORS.secondary,
+              ...FONTS.h43,
             }}
           />
         </View>
@@ -120,9 +117,9 @@ const Verify = ({navigation}) => {
           top: 160,
         }}>
         <TextButton
-          label="Verify Now"
+          label="Continue"
           buttonContainerStyle={{height: 56, width: 250}}
-          onPress={() => navigation.navigate('Confirm')}
+          onPress={() => navigation.navigate('Interest')}
         />
       </View>
     );
@@ -148,4 +145,4 @@ const Verify = ({navigation}) => {
   );
 };
 
-export default Verify;
+export default Profile;

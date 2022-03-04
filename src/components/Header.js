@@ -2,7 +2,7 @@ import React from 'react';
 
 import {View, Text, Image} from 'react-native';
 
-import {COLORS, FONTS} from '../constants';
+import {COLORS, FONTS, SIZES} from '../constants';
 
 const Header = ({
   containerStyle,
@@ -15,6 +15,7 @@ const Header = ({
     <View
       style={{
         flexDirection: 'row',
+        paddingHorizontal: SIZES.base,
         ...containerStyle,
       }}>
       {/* Left */}
