@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 
-import {OnBoarding} from './src/screens';
+import {Welcome, Verify} from './src/screens';
 
 import {LogBox} from 'react-native';
 
@@ -25,8 +25,9 @@ const App = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={'OnBoarding'}>
-        <Stack.Screen name="OnBoarding" component={OnBoarding} />
+        initialRouteName={'Welcome'}>
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Verify" component={Verify} />
       </Stack.Navigator>
     </NavigationContainer>
   );

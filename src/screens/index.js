@@ -1,4 +1,10 @@
-// Onboarding
-import OnBoarding from './OnBoarding/OnBoarding';
+// Welcome
+import Welcome from './OnBoarding/Welcome';
 
-export {OnBoarding};
+// OnBoardingLayout
+import OnBoardingLayout from './OnBoarding/OnBoardingLayout';
+
+// Verify
+import Verify from './OnBoarding/Verify';
+
+export {Welcome, OnBoardingLayout, Verify};
