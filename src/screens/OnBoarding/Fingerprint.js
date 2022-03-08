@@ -12,7 +12,7 @@ import {TextButton, Header, IconButton} from '../../components';
 import {images, FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
-const Verify = ({navigation}) => {
+const Fingerprint = ({navigation}) => {
   function renderHeaderSection() {
     return (
       <Header
@@ -39,12 +39,12 @@ const Verify = ({navigation}) => {
         }
         rightComponent={
           <TextButton
-            label="Next"
+            label="Skip"
             buttonContainerStyle={{
               backgroundColor: null,
             }}
             labelStyle={{color: COLORS.primary}}
-            onPress={() => navigation.navigate('Password')}
+            onPress={() => navigation.navigate('Profile')}
           />
         }
       />
@@ -61,19 +61,33 @@ const Verify = ({navigation}) => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
+        {/* background image */}
+        <View
+          style={{
+            top: -20,
+          }}>
+          <Image
+            source={images.fingerprint}
+            resizeMode="contain"
+            style={{
+              height: 216.69,
+              width: 219,
+            }}
+          />
+        </View>
         <Text
           style={{
             marginTop: SIZES.radius,
             textAlign: 'center',
             ...FONTS.body4,
-            color: COLORS.primary,
+            color: COLORS.secondary,
             paddingBottom: SIZES.radius,
           }}>
           STEP 1/7
         </Text>
         <Text
           style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
-          Let’s start with your {'\n'} mobile number
+          Enable Fingerprint
         </Text>
         <Text
           style={{
@@ -82,30 +96,9 @@ const Verify = ({navigation}) => {
             ...FONTS.body3,
             color: COLORS.text,
           }}>
-          Number we can use to reach you
+          If you enable touch ID, you don’t {'\n'}need to enter your password
+          when {'\n'}you login.
         </Text>
-        <View
-          style={{
-            marginTop: 20,
-            borderColor: COLORS.lightGray3,
-          }}>
-          <TextInput
-            placeholder="Text Input"
-            keyboardType="number-pad"
-            style={{
-              color: COLORS.textLarge,
-              minHeight: 50,
-              textAlign: 'center',
-              marginTop: 10,
-              marginBottom: 10,
-              height: 60,
-              width: 283,
-              borderRadius: 16,
-              backgroundColor: COLORS.white,
-              ...FONTS.body3,
-            }}
-          />
-        </View>
       </View>
     );
   }
@@ -120,9 +113,9 @@ const Verify = ({navigation}) => {
           top: 160,
         }}>
         <TextButton
-          label="Verify Now"
+          label="Activate"
           buttonContainerStyle={{height: 56, width: 250}}
-          onPress={() => navigation.navigate('Confirm')}
+          onPress={() => navigation.navigate('Profile')}
         />
       </View>
     );
@@ -148,4 +141,4 @@ const Verify = ({navigation}) => {
   );
 };
 
-export default Verify;
+export default Fingerprint;

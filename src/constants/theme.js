@@ -15,7 +15,8 @@ export const COLORS = {
   success: '#28a745',
   error: '#dc3545',
   tertiary: '#80B4A0',
-
+  otp: '#E4DFFF',
+  icon: '#E5E6EB',
   lightGreen: '#4BEE70',
   red: '#D84035',
   black: '#000000',
@@ -24,6 +25,7 @@ export const COLORS = {
   lightGray: '#3B3B3B',
   lightGray2: '#212125',
   lightGray3: '#757575',
+  lightGray4: '#F6F8FA',
   transparentWhite: 'rgba(255, 255, 255, 0.2)',
   transparentBlack: 'rgba(0, 0, 0, 0.8)',
   transparentBlack1: 'rgba(0, 0, 0, 0.4)',
@@ -78,8 +80,56 @@ export const FONTS = {
   body1: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body1, lineHeight: 36},
   body2: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body2, lineHeight: 30},
   body3: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body3, lineHeight: 28},
-  body4: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body4, lineHeight: 14},
+  body4: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body4, lineHeight: 22},
   body5: {fontFamily: 'Rubik-Regular', fontSize: SIZES.body5, lineHeight: 22},
+
+  largeTitleEx: {fontFamily: 'EudoxusSans-Bold', fontSize: SIZES.largeTitle},
+  h1Ex: {
+    fontFamily: 'EudoxusSans-SemiBold',
+    fontSize: SIZES.h1,
+    lineHeight: 32,
+  },
+  h2Ex: {
+    fontFamily: 'EudoxusSans-SemiBold',
+    fontSize: SIZES.h2,
+    lineHeight: 32,
+  },
+  h3Ex: {
+    fontFamily: 'EudoxusSans-Bold',
+    fontSize: SIZES.h3,
+    lineHeight: 28,
+  },
+  h4Ex: {
+    fontFamily: 'EudoxusSans-SemiBold',
+    fontSize: SIZES.h4,
+    lineHeight: 14,
+  },
+  h5Ex: {fontFamily: 'EudoxusSans-Bold', fontSize: SIZES.h5, lineHeight: 22},
+  body1Ex: {
+    fontFamily: 'EudoxusSans-Regular',
+    fontSize: SIZES.body1,
+    lineHeight: 36,
+  },
+  body2Ex: {
+    fontFamily: 'EudoxusSans-Regular',
+    fontSize: SIZES.body2,
+    lineHeight: 30,
+  },
+  body3Ex: {
+    fontFamily: 'EudoxusSans-Regular',
+    fontSize: SIZES.body3,
+    lineHeight: 28,
+  },
+  body4Ex: {
+    fontFamily: 'EudoxusSans-Regular',
+    fontSize: SIZES.body4,
+    lineHeight: 22,
+  },
+  body5Ex: {
+    fontFamily: 'EudoxusSans-Regular',
+    fontSize: SIZES.body5,
+    lineHeight: 22,
+  },
 };
 
 const appTheme = {COLORS, SIZES, FONTS};
