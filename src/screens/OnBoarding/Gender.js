@@ -99,7 +99,7 @@ const Gender = ({navigation}) => {
             top: 20,
           }}>
           <TextButton
-            label="Prefer not tp choose"
+            label="Prefer not to choose"
             buttonContainerStyle={{
               backgroundColor: null,
             }}

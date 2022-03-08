@@ -62,7 +62,7 @@ const Ready = ({navigation}) => {
             backgroundColor: COLORS.white,
           }}
           labelStyle={{color: COLORS.primary}}
-          onPress={() => navigation.navigate('Welcome')}
+          onPress={() => navigation.navigate('MainLayout')}
         />
       </View>
     );

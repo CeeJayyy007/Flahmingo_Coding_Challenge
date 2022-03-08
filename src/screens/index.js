@@ -40,6 +40,27 @@ import Notification from './OnBoarding/Notification';
 //Ready
 import Ready from './OnBoarding/Ready';
 
+//Portfolio
+import Portfolio from './Portfolio';
+
+//Exchange
+import Exchange from './Exchange';
+
+//SelectStocks
+import SelectStocks from './SelectStocks';
+
+//BuyStocks
+import BuyStocks from './BuyStocks';
+
+//Home
+import Home from './Home';
+
+//Profile
+import UserProfile from './UserProfile';
+
+//Chart
+import Chart from './Chart';
+
 export {
   Welcome,
   OnBoardingLayout,
@@ -55,4 +76,11 @@ export {
   Investment,
   Notification,
   Ready,
+  Portfolio,
+  Exchange,
+  SelectStocks,
+  BuyStocks,
+  Home,
+  UserProfile,
+  Chart,
 };
