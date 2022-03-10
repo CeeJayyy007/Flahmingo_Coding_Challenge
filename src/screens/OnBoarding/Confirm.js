@@ -5,7 +5,9 @@ import {TextButton, Header, IconButton} from '../../components';
 import {FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
-const Confirm = ({navigation}) => {
+const Confirm = ({navigation, route}) => {
+  const {phone} = route.params;
+
   function renderHeaderSection() {
     return (
       <Header
@@ -65,7 +67,7 @@ const Confirm = ({navigation}) => {
             ...FONTS.body3,
             color: COLORS.text,
           }}>
-          We'll text you on 14035108282
+          We'll text you on {phone}
         </Text>
 
         {/* OTP input */}

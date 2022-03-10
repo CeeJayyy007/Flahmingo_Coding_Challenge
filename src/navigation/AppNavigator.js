@@ -30,7 +30,7 @@ const OnboardingStackNavigator = () => (
     screenOptions={{
       headerShown: false,
     }}
-    initialRouteName={'MainLayout'}>
+    initialRouteName={'Home'}>
     <Stack.Screen name="Welcome" component={Welcome} />
     <Stack.Screen name="Verify" component={Verify} />
     <Stack.Screen name="Confirm" component={Confirm} />

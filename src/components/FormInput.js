@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, StyleSheet} from 'react-native';
 
 import {SIZES, COLORS} from '../constants';
 
@@ -24,21 +24,21 @@ const FormInput = ({
         ...containerStyle,
       }}>
       <View
-        style={{
-          flexDirection: 'row',
-          height: 60,
-          paddingHorizontal: SIZES.padding,
-          marginTop: SIZES.height > 800 ? SIZES.base : 0,
-          borderRadius: SIZES.radius,
-          backgroundColor: COLORS.white,
-          ...inputContainerStyle,
-        }}>
+        style={[
+          styles.shadowProp,
+          {
+            flexDirection: 'row',
+            height: 60,
+            paddingHorizontal: SIZES.padding,
+            marginTop: SIZES.height > 800 ? SIZES.base : 0,
+            borderRadius: SIZES.radius,
+            backgroundColor: COLORS.white,
+            ...inputContainerStyle,
+          },
+        ]}>
         {prependComponent}
         <TextInput
-          style={{
-            flex: 1,
-            ...inputStyle,
-          }}
+          style={{flex: 1, ...inputStyle}}
           value={value}
           placeholder={placeholder}
           placeholderTextColor={COLORS.gray}
@@ -56,3 +56,13 @@ const FormInput = ({
 };
 
 export default FormInput;
+
+const styles = StyleSheet.create({
+  shadowProp: {
+    shadowColor: COLORS.secondary,
+    shadowOffset: {width: -2, height: -5},
+    shadowRadius: 10,
+    shadowOpacity: 0.2,
+    elevation: 8,
+  },
+});

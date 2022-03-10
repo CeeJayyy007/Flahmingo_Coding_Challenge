@@ -12,28 +12,28 @@ const OnBoardingLayout = ({children}) => {
       style={{
         flex: 1,
       }}>
-      <KeyboardAwareScrollView
+      {/* <KeyboardAwareScrollView
         keyboardDismissMode="on-drag"
         contentContainerStyle={{
           flex: 1,
+        }}> */}
+      {/* Status bar */}
+      <StatusBar barStyle="dark-content" backgroundColor="#F4F6FA" />
+      {/* background color image */}
+      <ImageBackground
+        source={images.background}
+        //   resizeMode="stretch"
+        style={{
+          // flex: 1,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          height: '100%',
+          width: '100%',
         }}>
-        {/* Status bar */}
-        <StatusBar barStyle="dark-content" backgroundColor="#F4F6FA" />
-        {/* background color image */}
-        <ImageBackground
-          source={images.background}
-          //   resizeMode="stretch"
-          style={{
-            // flex: 1,
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            height: '100%',
-            width: '100%',
-          }}>
-          {/* Content / Children */}
-          {children}
-        </ImageBackground>
-      </KeyboardAwareScrollView>
+        {/* Content / Children */}
+        {children}
+      </ImageBackground>
+      {/* </KeyboardAwareScrollView> */}
     </View>
   );
 };

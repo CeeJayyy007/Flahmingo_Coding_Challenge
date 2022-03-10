@@ -20,6 +20,28 @@ const notifLight = require('../assets/icons/notif-light.png');
 const loss = require('../assets/icons/loss.png');
 const gain = require('../assets/icons/gain.png');
 const menu = require('../assets/icons/menu.png');
+const twitter = require('../assets/icons/twitter.png');
+const tesla = require('../assets/icons/tesla.png');
+const google = require('../assets/icons/google.png');
+const facebook = require('../assets/icons/facebook.png');
+const microsoft = require('../assets/icons/microsoft.png');
+const nike = require('../assets/icons/nike.png');
+const spotify = require('../assets/icons/spotify.png');
+const triangle = require('../assets/icons/triangle.png');
+const triangleDown = require('../assets/icons/triangle-down.png');
+const tick = require('../assets/icons/tick.png');
+const shape = require('../assets/icons/shape.png');
+const flex = require('../assets/icons/flex.png');
+const avocado = require('../assets/icons/avocado.png');
+const bed = require('../assets/icons/bed.png');
+const health = require('../assets/icons/health.png');
+const finance = require('../assets/icons/finance.png');
+const crypto = require('../assets/icons/crypto.png');
+const category = require('../assets/icons/category.png');
+const running = require('../assets/icons/running.png');
+const watermelon = require('../assets/icons/watermelon.png');
+const up = require('../assets/icons/up.png');
+const down = require('../assets/icons/down.png');
 
 export default {
   back,
@@ -44,4 +66,26 @@ export default {
   loss,
   gain,
   menu,
+  twitter,
+  tesla,
+  google,
+  facebook,
+  microsoft,
+  nike,
+  spotify,
+  triangle,
+  triangleDown,
+  tick,
+  shape,
+  flex,
+  bed,
+  avocado,
+  watermelon,
+  finance,
+  health,
+  category,
+  crypto,
+  running,
+  up,
+  down,
 };
