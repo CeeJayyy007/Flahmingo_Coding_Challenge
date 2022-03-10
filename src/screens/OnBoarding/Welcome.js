@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  Animated,
-  StyleSheet,
-} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import TextButton from '../../components/TextButton';
 import {images, FONTS, SIZES, COLORS} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
@@ -111,6 +104,7 @@ const Welcome = ({navigation}) => {
               color: COLORS.secondary,
               ...FONTS.h33,
             }}
+            onPress={() => navigation.navigate('MainLayout')}
           />
         </View>
       </View>

@@ -1,14 +1,69 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {TextButton, Header, IconButton, FormInput} from '../../components';
+import {
+  TextButton,
+  Header,
+  IconButton,
+  FormInput,
+  ProgressBar,
+} from '../../components';
 import {FONTS, SIZES, COLORS, icons} from '../../constants';
-import {utils} from '../../utils';
 import OnBoardingLayout from './OnBoardingLayout';
 
 const Password = ({navigation}) => {
-  const [password, setPassword] = React.useState('');
-  const [showPass, setShowPass] = React.useState(false);
-  const [passwordError, setPasswordError] = React.useState('');
+  const [showPass, setShowPass] = useState(false);
+  const [password, setPassword] = useState('');
+  const [validate, setValidate] = useState({
+    hasSpecialChar: false,
+    hasCap: false,
+    hasNumber: false,
+    has8digit: false,
+  });
+
+  const [message, setMessage] = useState({
+    hasSymbol: '',
+    hasUpperCase: '',
+    hasNum: '',
+    has8char: '',
+  });
+
+  const strength = Object.values(validate).reduce((a, item) => a + item, 0);
+
+  const validateMessage = Object.values(message);
+
+  const validatePassword = password => {
+    if (password.match(/\d+/g)) {
+      setValidate(o => ({...o, hasNumber: true}));
+      setMessage(o => ({...o, hasNum: '* 1 number       '}));
+    } else {
+      setValidate(o => ({...o, hasNumber: false, hasNum: ''}));
+      setMessage(o => ({...o, hasNum: ''}));
+    }
+
+    if (password.match(/[A-Z]+/g)) {
+      setValidate(o => ({...o, hasCap: true}));
+      setMessage(o => ({...o, hasUpperCase: '* 1 upper case        '}));
+    } else {
+      setValidate(o => ({...o, hasCap: false, hasUpperCase: ''}));
+      setMessage(o => ({...o, hasUpperCase: ''}));
+    }
+
+    if (password.match(/[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/)) {
+      setValidate(o => ({...o, hasSpecialChar: true}));
+      setMessage(o => ({...o, hasSymbol: '* 1 symbol         '}));
+    } else {
+      setValidate(o => ({...o, hasSpecialChar: false}));
+      setMessage(o => ({...o, hasSymbol: ''}));
+    }
+
+    if (password.length > 7) {
+      setValidate(o => ({...o, has8digit: true}));
+      setMessage(o => ({...o, has8char: '* 8+ char       '}));
+    } else {
+      setValidate(o => ({...o, has8digit: false, has8char: ''}));
+      setMessage(o => ({...o, has8char: ''}));
+    }
+  };
 
   function renderHeaderSection() {
     return (
@@ -62,7 +117,6 @@ const Password = ({navigation}) => {
           style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
           Set your password
         </Text>
-
         <FormInput
           value={password}
           secureTextEntry={!showPass}
@@ -76,10 +130,8 @@ const Password = ({navigation}) => {
             textAlign: 'center',
             ...FONTS.h1,
           }}
-          // placeholder="Enter Password"
-          // placeholderTextColor={COLORS.text}
           onChange={value => {
-            utils.validatePassword(value, setPasswordError);
+            validatePassword(value);
             setPassword(value);
           }}
           appendComponent={
@@ -102,47 +154,57 @@ const Password = ({navigation}) => {
             </TouchableOpacity>
           }
         />
+      </View>
+    );
+  }
 
+  function renderValidationIndicators() {
+    return (
+      <View
+        style={{
+          top: 190,
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+        }}>
         <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginTop: SIZES.padding * 2,
-          }}>
-          <Text
-            style={{
-              ...FONTS.body4,
-              color: COLORS.text,
-            }}>
-            * 8+ Characters
-          </Text>
-          <Text
-            style={{
-              ...FONTS.body4,
-              color: COLORS.text,
-            }}>
-            * 8+ Characters
-          </Text>
+          flexDirection="row"
+          style={{alignItems: 'center', justifyContent: 'flex-start'}}>
+          <ProgressBar
+            barStyle={{
+              marginRight: SIZES.base,
+              backgroundColor: strength > 0 ? COLORS.secondary : COLORS.otp,
+            }}
+          />
+          <ProgressBar
+            barStyle={{
+              marginRight: SIZES.base,
+              backgroundColor: strength > 1 ? COLORS.secondary : COLORS.otp,
+            }}
+          />
+          <ProgressBar
+            barStyle={{
+              marginRight: SIZES.base,
+              backgroundColor: strength > 2 ? COLORS.secondary : COLORS.otp,
+            }}
+          />
+          <ProgressBar
+            barStyle={{
+              marginRight: SIZES.base,
+              backgroundColor: strength > 3 ? COLORS.secondary : COLORS.otp,
+            }}
+          />
         </View>
         <View
           style={{
-            flexDirection: 'row',
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding,
+            marginHorizontal: SIZES.padding * 2,
           }}>
           <Text
             style={{
               ...FONTS.body4,
               color: COLORS.text,
             }}>
-            * 8+ Characters
-          </Text>
-          <Text
-            style={{
-              ...FONTS.body4,
-              color: COLORS.text,
-            }}>
-            * 8+ Characters
+            {validateMessage}
           </Text>
         </View>
       </View>
@@ -179,6 +241,9 @@ const Password = ({navigation}) => {
 
         {/* body section */}
         {renderBodySection()}
+
+        {/* validation indicators */}
+        {renderValidationIndicators()}
 
         {/* Bottom section */}
         {renderBottomSection()}

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import {View, Text, Image, ImageBackground, StatusBar} from 'react-native';
+import {View, ImageBackground, StatusBar} from 'react-native';
 
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-
-import {FONTS, SIZES, COLORS, images} from '../../constants';
+import {images} from '../../constants';
 
 const OnBoardingLayout = ({children}) => {
   return (
@@ -12,17 +10,11 @@ const OnBoardingLayout = ({children}) => {
       style={{
         flex: 1,
       }}>
-      {/* <KeyboardAwareScrollView
-        keyboardDismissMode="on-drag"
-        contentContainerStyle={{
-          flex: 1,
-        }}> */}
       {/* Status bar */}
       <StatusBar barStyle="dark-content" backgroundColor="#F4F6FA" />
       {/* background color image */}
       <ImageBackground
         source={images.background}
-        //   resizeMode="stretch"
         style={{
           // flex: 1,
           alignItems: 'center',
@@ -33,7 +25,6 @@ const OnBoardingLayout = ({children}) => {
         {/* Content / Children */}
         {children}
       </ImageBackground>
-      {/* </KeyboardAwareScrollView> */}
     </View>
   );
 };

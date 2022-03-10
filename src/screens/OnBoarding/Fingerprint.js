@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  Animated,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {TextButton, Header, IconButton} from '../../components';
 import {images, FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';

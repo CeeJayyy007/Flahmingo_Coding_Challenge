@@ -22,13 +22,39 @@ function validateUsername(value, setUsernameError) {
   }
 }
 
-function validatePassword(value, setPasswordError) {
-  if (value.length < 6) {
-    setPasswordError('Password must be 6 characters or more');
+// function validatePassword(value, setPasswordError) {
+//   if (value.length < 6) {
+//     setPasswordError('Password must be 6 characters or more');
+//   } else {
+//     setPasswordError('');
+//   }
+// }
+
+const validatePassword = password => {
+  if (password.match(/\d+/g)) {
+    setValidate(o => ({...o, hasNumber: true}));
   } else {
-    setPasswordError('');
+    setValidate(o => ({...o, hasNumber: false}));
   }
-}
+
+  if (password.match(/[A-Z]+/g)) {
+    setValidate(o => ({...o, hasCap: true}));
+  } else {
+    setValidate(o => ({...o, hasCap: false}));
+  }
+
+  if (password.match(/[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/)) {
+    setValidate(o => ({...o, hasSpecialChar: true}));
+  } else {
+    setValidate(o => ({...o, hasSpecialChar: false}));
+  }
+
+  if (password.length > 7) {
+    setValidate(o => ({...o, has8digit: true}));
+  } else {
+    setValidate(o => ({...o, has8digit: false}));
+  }
+};
 
 function isValidPhone(value) {
   const re =

@@ -44,8 +44,6 @@ const FormInput = ({
           placeholderTextColor={COLORS.gray}
           secureTextEntry={secureTextEntry}
           keyboardType={keyboardType}
-          autoCapitalize={autoCapitalize}
-          autoCompleteType={autoCompleteType}
           maxLength={maxLength}
           onChangeText={text => onChange(text)}
         />

@@ -9,6 +9,7 @@ import PortfolioIndicator from './PortfolioIndicator';
 import GenderCard from './GenderCard';
 import NotificationCard from './NotificationCard';
 import InterestCard from './InterestCard';
+import ProgressBar from './ProgressBar';
 
 export {
   CardItem,
@@ -22,4 +23,5 @@ export {
   GenderCard,
   NotificationCard,
   InterestCard,
+  ProgressBar,
 };
