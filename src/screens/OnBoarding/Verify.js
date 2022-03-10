@@ -1,13 +1,5 @@
 import React, {useState, useRef} from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  Animated,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {TextButton, Header, IconButton} from '../../components';
 import {FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
@@ -17,10 +9,6 @@ const Verify = ({navigation, route}) => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const phoneInput = useRef(null);
-
-  // const getPhoneNumber = () => {
-  //   setPhoneNumber(phoneNumber);
-  // };
 
   function renderHeaderSection() {
     return (

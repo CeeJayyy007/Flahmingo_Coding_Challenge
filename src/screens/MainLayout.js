@@ -13,7 +13,6 @@ const MainLayout = ({children}) => {
       }}>
       {/* Status bar */}
       <StatusBar barStyle="dark-content" backgroundColor="#E4DFFF" />
-      {/* background color image */}
       {/* Content / Children */}
       {children}
     </View>

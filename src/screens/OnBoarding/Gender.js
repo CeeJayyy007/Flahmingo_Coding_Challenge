@@ -1,4 +1,3 @@
-import OTPInputView from '@twotalltotems/react-native-otp-input';
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import {TextButton, Header, IconButton, GenderCard} from '../../components';
