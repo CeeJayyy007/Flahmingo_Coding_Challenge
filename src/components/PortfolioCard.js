@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image} from 'react-native';
 
-import {FONTS, COLORS, SIZES} from '../constants';
+import {FONTS, COLORS, SIZES, icons} from '../constants';
 
 const PortfolioCard = ({
   cardContainerStyle,
@@ -64,13 +64,12 @@ const PortfolioCard = ({
             marginLeft: SIZES.radius,
             ...clipContainerStyle,
           }}>
-          <View
+          <Image
+            source={icons.triangle}
             style={{
               height: 5,
               width: 5,
-              borderRadius: 10,
               marginRight: 5,
-              backgroundColor: COLORS.primary,
             }}
           />
           <Text style={{color: COLORS.white, ...FONTS.body5Ex}}>810%</Text>

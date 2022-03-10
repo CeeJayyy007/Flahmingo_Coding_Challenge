@@ -1,15 +1,12 @@
 import React from 'react';
+import {View, Text, Image} from 'react-native';
 import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  Animated,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
-import {TextButton, Header, IconButton} from '../../components';
-import {images, FONTS, SIZES, COLORS, icons} from '../../constants';
+  TextButton,
+  Header,
+  IconButton,
+  NotificationCard,
+} from '../../components';
+import {images, FONTS, SIZES, COLORS, icons, constants} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
 const Notification = ({navigation}) => {
@@ -90,15 +87,15 @@ const Notification = ({navigation}) => {
             }}
           />
         </View>
-        <Text
+        <View
           style={{
-            marginTop: SIZES.radius,
-            textAlign: 'left',
-            ...FONTS.body3,
-            color: COLORS.text,
+            flex: 1,
+            marginBottom: SIZES.padding,
           }}>
-          New weekly reminder
-        </Text>
+          {constants.notifications.map((item, index) => {
+            return <NotificationCard key={item.id} item={item} />;
+          })}
+        </View>
       </View>
     );
   }

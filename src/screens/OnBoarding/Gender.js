@@ -1,11 +1,12 @@
 import OTPInputView from '@twotalltotems/react-native-otp-input';
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
-import {TextButton, Header, IconButton} from '../../components';
-import {FONTS, SIZES, COLORS, icons} from '../../constants';
+import {TextButton, Header, IconButton, GenderCard} from '../../components';
+import {FONTS, SIZES, COLORS, icons, constants} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
 const Gender = ({navigation}) => {
+  const [selectedCard, setSelectedCard] = useState(null);
   function renderHeaderSection() {
     return (
       <Header
@@ -58,14 +59,27 @@ const Gender = ({navigation}) => {
           style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
           Which one are you?
         </Text>
-        {/* Gender selector */}
+
         <View
           style={{
             flex: 1,
+            flexDirection: 'row',
             marginTop: SIZES.padding * 2,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}></View>
+            marginBottom: SIZES.padding,
+          }}>
+          {constants.gender.map((item, index) => {
+            return (
+              <GenderCard
+                key={item.id}
+                item={item}
+                selectedCard={selectedCard}
+                isSelected={`${selectedCard?.id}` == `${item.id}`}
+                onPress={() => setSelectedCard({...item})}
+              />
+            );
+          })}
+        </View>
+
         <Text
           style={{
             marginTop: SIZES.radius,
@@ -87,7 +101,7 @@ const Gender = ({navigation}) => {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          top: 160,
+          top: 230,
         }}>
         <TextButton
           label="Continue"
@@ -107,6 +121,7 @@ const Gender = ({navigation}) => {
               color: COLORS.secondary,
               ...FONTS.h43,
             }}
+            onPress={() => navigation.navigate('Experience')}
           />
         </View>
       </View>
@@ -126,6 +141,8 @@ const Gender = ({navigation}) => {
         {/* body section */}
         {renderBodySection()}
 
+        {/* Gender selector */}
+        {/* {renderGenderCard()} */}
         {/* Bottom section */}
         {renderBottomSection()}
       </OnBoardingLayout>

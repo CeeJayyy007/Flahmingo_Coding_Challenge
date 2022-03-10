@@ -74,7 +74,7 @@ const Password = ({navigation}) => {
           }}
           inputStyle={{
             textAlign: 'center',
-            ...FONTS.h2,
+            ...FONTS.h1,
           }}
           // placeholder="Enter Password"
           // placeholderTextColor={COLORS.text}
@@ -102,9 +102,12 @@ const Password = ({navigation}) => {
             </TouchableOpacity>
           }
         />
+
         <View
           style={{
             flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
             marginTop: SIZES.padding * 2,
           }}>
           <Text
@@ -124,10 +127,8 @@ const Password = ({navigation}) => {
         </View>
         <View
           style={{
-            flex: 1,
             flexDirection: 'row',
-
-            marginTop: SIZES.padding,
+            marginTop: SIZES.radius,
           }}>
           <Text
             style={{

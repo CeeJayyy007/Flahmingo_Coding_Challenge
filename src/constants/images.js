@@ -7,6 +7,13 @@ const notification = require('../assets/images/backgrounds/notification.png');
 const investment = require('../assets/images/backgrounds/investment.png');
 const bgReady = require('../assets/images/backgrounds/BG-ready.png');
 const ready = require('../assets/images/backgrounds/ready.png');
+const pattern = require('../assets/images/backgrounds/pattern-primary.png');
+const patternDark = require('../assets/images/backgrounds/pattern-secondary.png');
+const patternBlank = require('../assets/images/backgrounds/pattern-blank.png');
+const genderSelected = require('../assets/images/backgrounds/gender-selected.png');
+const genderBlank = require('../assets/images/backgrounds/gender-blank.png');
+const levelIntensity = require('../assets/images/backgrounds/level-intensity.png');
+const level = require('../assets/images/backgrounds/level.png');
 
 export default {
   logo_01,
@@ -18,4 +25,11 @@ export default {
   investment,
   bgReady,
   ready,
+  pattern,
+  patternDark,
+  patternBlank,
+  genderSelected,
+  genderBlank,
+  levelIntensity,
+  level,
 };

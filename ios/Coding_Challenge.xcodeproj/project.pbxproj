@@ -28,6 +28,12 @@
 		8B3D09B0C87145F2B29CEF5B /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43CA3EAEACB46E4A8784020 /* Rubik-SemiBold.ttf */; };
 		7E4A23CF5414483D8BCBB9F6 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FEB3BF8D8AB4B2980742B30 /* Rubik-SemiBoldItalic.ttf */; };
 		701FD09066F14FE0904C0B93 /* Rubik-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF894E13C448A8BEA3086C /* Rubik-VariableFont_wght.ttf */; };
+		7B947E4B4BC6439CB6356102 /* EudoxusSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEE75111933F43CCA808CB3A /* EudoxusSans-Bold.ttf */; };
+		336493D2E5544D5BB3F5BD83 /* EudoxusSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BED44F78D3AE4A57B510C9F6 /* EudoxusSans-ExtraBold.ttf */; };
+		8BF2663250054F909A0A90BD /* EudoxusSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD101EE797354DF386ABF7BA /* EudoxusSans-ExtraLight.ttf */; };
+		74A0818E2B414296813877D2 /* EudoxusSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEED8F1FB4F949E2BF7897A8 /* EudoxusSans-Light.ttf */; };
+		D7B1910C4C044ED89CD009BF /* EudoxusSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8672699EE9EC4CECB2BCE42C /* EudoxusSans-Medium.ttf */; };
+		5DCEAF86CE2647B58E0A8555 /* EudoxusSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50B4ECBEADB74E32A5C8FD5E /* EudoxusSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,12 @@
 		F43CA3EAEACB46E4A8784020 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; name = "Rubik-SemiBold.ttf"; path = "../src/assets/fonts/Rubik-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1FEB3BF8D8AB4B2980742B30 /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Rubik-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5FBF894E13C448A8BEA3086C /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Rubik-VariableFont_wght.ttf"; path = "../src/assets/fonts/Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DEE75111933F43CCA808CB3A /* EudoxusSans-Bold.ttf */ = {isa = PBXFileReference; name = "EudoxusSans-Bold.ttf"; path = "../src/assets/fonts/EudoxusSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BED44F78D3AE4A57B510C9F6 /* EudoxusSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "EudoxusSans-ExtraBold.ttf"; path = "../src/assets/fonts/EudoxusSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BD101EE797354DF386ABF7BA /* EudoxusSans-ExtraLight.ttf */ = {isa = PBXFileReference; name = "EudoxusSans-ExtraLight.ttf"; path = "../src/assets/fonts/EudoxusSans-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEED8F1FB4F949E2BF7897A8 /* EudoxusSans-Light.ttf */ = {isa = PBXFileReference; name = "EudoxusSans-Light.ttf"; path = "../src/assets/fonts/EudoxusSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8672699EE9EC4CECB2BCE42C /* EudoxusSans-Medium.ttf */ = {isa = PBXFileReference; name = "EudoxusSans-Medium.ttf"; path = "../src/assets/fonts/EudoxusSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		50B4ECBEADB74E32A5C8FD5E /* EudoxusSans-Regular.ttf */ = {isa = PBXFileReference; name = "EudoxusSans-Regular.ttf"; path = "../src/assets/fonts/EudoxusSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +188,12 @@
 				F43CA3EAEACB46E4A8784020 /* Rubik-SemiBold.ttf */,
 				1FEB3BF8D8AB4B2980742B30 /* Rubik-SemiBoldItalic.ttf */,
 				5FBF894E13C448A8BEA3086C /* Rubik-VariableFont_wght.ttf */,
+				DEE75111933F43CCA808CB3A /* EudoxusSans-Bold.ttf */,
+				BED44F78D3AE4A57B510C9F6 /* EudoxusSans-ExtraBold.ttf */,
+				BD101EE797354DF386ABF7BA /* EudoxusSans-ExtraLight.ttf */,
+				CEED8F1FB4F949E2BF7897A8 /* EudoxusSans-Light.ttf */,
+				8672699EE9EC4CECB2BCE42C /* EudoxusSans-Medium.ttf */,
+				50B4ECBEADB74E32A5C8FD5E /* EudoxusSans-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +305,12 @@
 				8B3D09B0C87145F2B29CEF5B /* Rubik-SemiBold.ttf in Resources */,
 				7E4A23CF5414483D8BCBB9F6 /* Rubik-SemiBoldItalic.ttf in Resources */,
 				701FD09066F14FE0904C0B93 /* Rubik-VariableFont_wght.ttf in Resources */,
+				7B947E4B4BC6439CB6356102 /* EudoxusSans-Bold.ttf in Resources */,
+				336493D2E5544D5BB3F5BD83 /* EudoxusSans-ExtraBold.ttf in Resources */,
+				8BF2663250054F909A0A90BD /* EudoxusSans-ExtraLight.ttf in Resources */,
+				74A0818E2B414296813877D2 /* EudoxusSans-Light.ttf in Resources */,
+				D7B1910C4C044ED89CD009BF /* EudoxusSans-Medium.ttf in Resources */,
+				5DCEAF86CE2647B58E0A8555 /* EudoxusSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

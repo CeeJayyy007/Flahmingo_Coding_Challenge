@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import {
   View,
   Text,
@@ -9,10 +9,19 @@ import {
   TextInput,
 } from 'react-native';
 import {TextButton, Header, IconButton} from '../../components';
-import {images, FONTS, SIZES, COLORS, icons} from '../../constants';
+import {FONTS, SIZES, COLORS, icons} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
+import PhoneInput from 'react-native-phone-number-input';
 
-const Verify = ({navigation}) => {
+const Verify = ({navigation, route}) => {
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const phoneInput = useRef(null);
+
+  // const getPhoneNumber = () => {
+  //   setPhoneNumber(phoneNumber);
+  // };
+
   function renderHeaderSection() {
     return (
       <Header
@@ -84,28 +93,20 @@ const Verify = ({navigation}) => {
           }}>
           Number we can use to reach you
         </Text>
-        <View
-          style={{
-            marginTop: 20,
-            borderColor: COLORS.lightGray3,
-          }}>
-          <TextInput
-            placeholder="Text Input"
-            keyboardType="number-pad"
-            style={{
-              color: COLORS.textLarge,
-              minHeight: 50,
-              textAlign: 'center',
-              marginTop: 10,
-              marginBottom: 10,
-              height: 60,
-              width: 283,
-              borderRadius: 16,
-              backgroundColor: COLORS.white,
-              ...FONTS.body3,
-            }}
-          />
-        </View>
+
+        <PhoneInput
+          ref={phoneInput}
+          defaultValue={phoneNumber}
+          defaultCode="CA"
+          layout="first"
+          withShadow
+          autoFocus
+          containerStyle={styleSheet.phoneNumberView}
+          textContainerStyle={styleSheet.phoneNumberTextView}
+          onChangeFormattedText={text => {
+            setPhoneNumber(text);
+          }}
+        />
       </View>
     );
   }
@@ -122,7 +123,7 @@ const Verify = ({navigation}) => {
         <TextButton
           label="Verify Now"
           buttonContainerStyle={{height: 56, width: 250}}
-          onPress={() => navigation.navigate('Confirm')}
+          onPress={() => navigation.navigate('Confirm', {phone: phoneNumber})}
         />
       </View>
     );
@@ -149,3 +150,27 @@ const Verify = ({navigation}) => {
 };
 
 export default Verify;
+
+const styleSheet = StyleSheet.create({
+  MainContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  phoneNumberView: {
+    width: 283,
+    height: 60,
+    backgroundColor: 'white',
+    borderRadius: 16,
+    marginTop: 30,
+  },
+
+  phoneNumberTextView: {
+    borderTopRightRadius: 16,
+    borderBottomRightRadius: 16,
+    height: 60,
+    paddingVertical: 0,
+    backgroundColor: COLORS.white,
+  },
+});

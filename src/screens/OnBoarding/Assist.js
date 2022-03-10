@@ -1,11 +1,11 @@
-import OTPInputView from '@twotalltotems/react-native-otp-input';
-import React from 'react';
-import {View, Text} from 'react-native';
-import {TextButton, Header, IconButton} from '../../components';
-import {FONTS, SIZES, COLORS, icons} from '../../constants';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {TextButton, Header, IconButton, CardItem} from '../../components';
+import {FONTS, SIZES, COLORS, icons, dummyData} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
 const Assist = ({navigation}) => {
+  const [selectedCard, setSelectedCard] = useState(null);
   function renderHeaderSection() {
     return (
       <Header
@@ -48,7 +48,7 @@ const Assist = ({navigation}) => {
     return (
       <View
         style={{
-          top: 80,
+          top: 60,
           flex: 1,
           position: 'absolute',
           alignItems: 'center',
@@ -77,15 +77,28 @@ const Assist = ({navigation}) => {
           }}>
           You can always change this later
         </Text>
+      </View>
+    );
+  }
 
-        {/* Assistance flatlist */}
-        <View
-          style={{
-            flex: 1,
-            marginTop: SIZES.padding * 2,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}></View>
+  function renderAssistCards() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          top: 180,
+        }}>
+        {dummyData.assist.map((item, index) => {
+          return (
+            <CardItem
+              key={item.id}
+              item={item}
+              selectedCard={selectedCard}
+              isSelected={`${selectedCard?.id}` == `${item.id}`}
+              onPress={() => setSelectedCard({...item})}
+            />
+          );
+        })}
       </View>
     );
   }
@@ -97,7 +110,7 @@ const Assist = ({navigation}) => {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          top: 260,
+          top: 100,
         }}>
         <TextButton
           label="Continue"
@@ -120,6 +133,9 @@ const Assist = ({navigation}) => {
 
         {/* body section */}
         {renderBodySection()}
+
+        {/* Assist cards section */}
+        {renderAssistCards()}
 
         {/* Bottom section */}
         {renderBottomSection()}

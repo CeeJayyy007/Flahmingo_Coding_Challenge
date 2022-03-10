@@ -69,6 +69,12 @@
 		<string>Rubik-SemiBold.ttf</string>
 		<string>Rubik-SemiBoldItalic.ttf</string>
 		<string>Rubik-VariableFont_wght.ttf</string>
+		<string>EudoxusSans-Bold.ttf</string>
+		<string>EudoxusSans-ExtraBold.ttf</string>
+		<string>EudoxusSans-ExtraLight.ttf</string>
+		<string>EudoxusSans-Light.ttf</string>
+		<string>EudoxusSans-Medium.ttf</string>
+		<string>EudoxusSans-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

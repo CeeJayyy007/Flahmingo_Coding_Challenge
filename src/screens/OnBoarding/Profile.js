@@ -1,11 +1,12 @@
-import OTPInputView from '@twotalltotems/react-native-otp-input';
-import React from 'react';
-import {View, Text} from 'react-native';
-import {TextButton, Header, IconButton} from '../../components';
-import {FONTS, SIZES, COLORS, icons} from '../../constants';
+import React, {useState} from 'react';
+import {View, Text, Image} from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
+import {TextButton, Header, IconButton, InterestCard} from '../../components';
+import {FONTS, SIZES, COLORS, icons, constants} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
 const Profile = ({navigation}) => {
+  const [selectedCard, setSelectedCard] = useState(null);
   function renderHeaderSection() {
     return (
       <Header
@@ -65,20 +66,40 @@ const Profile = ({navigation}) => {
           STEP 1/7
         </Text>
         <Text
-          style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
+          style={{
+            ...FONTS.h2,
+            color: COLORS.textLarge,
+            textAlign: 'center',
+            marginBottom: SIZES.padding,
+          }}>
           Profile Photo
         </Text>
+        <Image
+          source={icons.down}
+          style={{height: 10, width: 15, marginVertical: SIZES.radius}}
+        />
         {/* Profile picture slider */}
-        <View
-          style={{
-            flex: 1,
-            marginTop: SIZES.padding * 2,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}></View>
+        <FlatList
+          data={constants.profile}
+          keyExtractor={item => `${item.id}`}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({item, index}) => (
+            <InterestCard
+              key={item.id}
+              item={item}
+              selectedCard={selectedCard}
+              isSelected={`${selectedCard?.id}` == `${item.id}`}
+              onPress={() => setSelectedCard({...item})}
+              iconContainerStyle={{height: 90, width: 90}}
+              iconStyle={{height: 30, width: 37.5}}
+            />
+          )}
+        />
+        <Image source={icons.up} style={{height: 10, width: 15}} />
         <Text
           style={{
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding,
             textAlign: 'center',
             ...FONTS.body3,
             color: COLORS.text,
@@ -114,7 +135,7 @@ const Profile = ({navigation}) => {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          top: 160,
+          top: 260,
         }}>
         <TextButton
           label="Continue"

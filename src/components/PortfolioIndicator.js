@@ -2,23 +2,26 @@ import React from 'react';
 
 import {View, Text, Image} from 'react-native';
 
+import {Divider} from 'react-native-paper';
+
 import {COLORS, FONTS, icons, SIZES} from '../constants';
 
 const PortfolioIndicator = ({overallGainAmount, gainAmount}) => {
   return (
     <View
       style={{
-        // position: 'absolute',
         flexDirection: 'row',
+        marginTop: SIZES.padding,
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop: SIZES.padding * 1.3,
         width: 200,
       }}>
       {/* Left */}
       <View
         style={{
           flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
         <Image
           source={icons.loss}
@@ -30,7 +33,7 @@ const PortfolioIndicator = ({overallGainAmount, gainAmount}) => {
         <View
           style={{
             flex: 1,
-            marginHorizontal: SIZES.padding,
+            marginLeft: SIZES.padding,
           }}>
           <Text
             style={{
@@ -42,7 +45,7 @@ const PortfolioIndicator = ({overallGainAmount, gainAmount}) => {
             style={{
               paddingTop: SIZES.base,
               ...FONTS.body3Ex,
-              color: COLORS.black,
+              color: COLORS.textDark,
             }}>
             {gainAmount}
             <Text
@@ -56,11 +59,14 @@ const PortfolioIndicator = ({overallGainAmount, gainAmount}) => {
         </View>
       </View>
       {/* Divider */}
-      <View
+      <Divider
+        orientation="vertical"
         style={{
-          height: '70%',
-          //   width: '100%',
-          backgroundColor: COLORS.lightGray3,
+          color: COLORS.lightGray3,
+          width: '13%',
+          height: 1.5,
+          transform: [{rotate: '90deg'}],
+          marginLeft: -SIZES.padding * 1.5,
         }}
       />
 
@@ -68,6 +74,9 @@ const PortfolioIndicator = ({overallGainAmount, gainAmount}) => {
       <View
         style={{
           flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginLeft: SIZES.base,
         }}>
         <Image
           source={icons.gain}
@@ -91,7 +100,7 @@ const PortfolioIndicator = ({overallGainAmount, gainAmount}) => {
             style={{
               paddingBottom: SIZES.base,
               ...FONTS.body4Ex,
-              color: COLORS.black,
+              color: COLORS.textDark,
             }}>
             {overallGainAmount}
             <Text

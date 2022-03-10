@@ -1,11 +1,11 @@
-import OTPInputView from '@twotalltotems/react-native-otp-input';
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
-import {TextButton, Header, IconButton} from '../../components';
-import {FONTS, SIZES, COLORS, icons} from '../../constants';
+import {TextButton, Header, IconButton, InterestCard} from '../../components';
+import {FONTS, SIZES, COLORS, icons, constants} from '../../constants';
 import OnBoardingLayout from './OnBoardingLayout';
 
 const Interest = ({navigation}) => {
+  const [selectedCard, setSelectedCard] = useState(null);
   function renderHeaderSection() {
     return (
       <Header
@@ -68,14 +68,32 @@ const Interest = ({navigation}) => {
           style={{...FONTS.h2, color: COLORS.textLarge, textAlign: 'center'}}>
           Time to customize {'\n'}your interests
         </Text>
-        {/* Interest picker */}
-        <View
-          style={{
-            flex: 1,
-            marginTop: SIZES.padding * 2,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}></View>
+      </View>
+    );
+  }
+
+  function renderSelectInterestSection() {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          top: 110,
+          marginTop: SIZES.padding * 2,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        {constants.interests.map((item, index) => {
+          return (
+            <InterestCard
+              key={item.id}
+              item={item}
+              selectedCard={selectedCard}
+              isSelected={`${selectedCard?.id}` == `${item.id}`}
+              onPress={() => setSelectedCard({...item})}
+            />
+          );
+        })}
       </View>
     );
   }
@@ -87,7 +105,7 @@ const Interest = ({navigation}) => {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          top: 260,
+          top: 40,
         }}>
         <TextButton
           label="Continue"
@@ -110,6 +128,9 @@ const Interest = ({navigation}) => {
 
         {/* body section */}
         {renderBodySection()}
+
+        {/* select interest section */}
+        {renderSelectInterestSection()}
 
         {/* Bottom section */}
         {renderBottomSection()}
